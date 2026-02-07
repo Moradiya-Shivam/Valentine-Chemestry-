@@ -39,8 +39,24 @@ export default function ValentineChemistry() {
                 </motion.div>
               )}
             </AnimatePresence>
-            <motion.div animate={{ x: approach ? '20vw' : '0vw' }} transition={{ duration: 4, ease: "easeInOut" }} className="absolute left-[10%] top-[55%] sm:top-1/2 -translate-y-1/2 w-20 h-20 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-700 shadow-2xl flex items-center justify-center text-sm sm:text-base">Shivam</motion.div>
-            <motion.div animate={{ x: approach ? '-20vw' : '0vw' }} transition={{ duration: 4, ease: "easeInOut" }} className="absolute right-[10%] top-[55%] sm:top-1/2 -translate-y-1/2 w-20 h-20 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-pink-400 to-fuchsia-600 shadow-2xl flex items-center justify-center text-sm sm:text-base">Shruti</motion.div>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="relative flex w-[min(70vw,18rem)] max-w-xs items-center justify-between gap-6">
+                <motion.div
+                  animate={{ x: approach ? 56 : 0 }}
+                  transition={{ duration: 4, ease: "easeInOut" }}
+                  className="w-20 h-20 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-700 shadow-2xl flex items-center justify-center text-sm sm:text-base"
+                >
+                  Shivam
+                </motion.div>
+                <motion.div
+                  animate={{ x: approach ? -56 : 0 }}
+                  transition={{ duration: 4, ease: "easeInOut" }}
+                  className="w-20 h-20 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-pink-400 to-fuchsia-600 shadow-2xl flex items-center justify-center text-sm sm:text-base"
+                >
+                  Shruti
+                </motion.div>
+              </div>
+            </div>
           </div>
           <button onClick={() => { setApproach(true); setTimeout(() => setStage(2), 4200); }} className="mt-16 px-6 py-3 bg-gradient-to-r from-pink-600 to-fuchsia-600 rounded-full shadow-xl">Bring us a little closer ❤️</button>
         </div>
@@ -65,7 +81,12 @@ export default function ValentineChemistry() {
           <p className="absolute top-8 sm:top-16 px-4 text-center text-base sm:text-xl italic text-pink-200">"Love becomes stable when every part finds its place"</p>
           <div className="relative w-[480px] h-[480px]">
             <motion.div className="absolute inset-0 flex items-center justify-center" animate={{ scale: lockProton ? [1, 1.35, 1] : [1, 1.15, 1], filter: lockProton ? "drop-shadow(0 0 70px rgba(255,120,180,1))" : "drop-shadow(0 0 35px rgba(255,120,180,0.6))" }} transition={{ duration: lockProton ? 1.2 : 1.8, repeat: Infinity, ease: "easeInOut" }}>
-              <svg viewBox="0 0 32 29.6" className="w-20 h-20"><path d="M23.6,0c-3.4,0-6.4,2.1-7.6,5.1C14.8,2.1,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.5,16,21.2,16,21.2s16-11.7,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#ff5f9e" /></svg>
+              <svg viewBox="0 0 32 29.6" className="w-20 h-20">
+                <path d="M23.6,0c-3.4,0-6.4,2.1-7.6,5.1C14.8,2.1,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.5,16,21.2,16,21.2s16-11.7,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#ff5f9e" />
+                <text x="16" y="17" textAnchor="middle" dominantBaseline="middle" fill="#ffe5f6" fontSize="5" fontWeight="600" letterSpacing="0.08em">
+                  Shrutu
+                </text>
+              </svg>
             </motion.div>
 
             {["Trust", "Efforts", "Time" ].map((word, i) => (
