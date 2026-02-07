@@ -28,12 +28,15 @@ export default function ValentineChemistry() {
             <AnimatePresence>
               {approach && (
                 <motion.div
+                  key="approach-circle"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 2.4, opacity: 0.6 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 2 }}
-                  className="absolute left-1/2 top-1/2 w-36 h-36 rounded-full border border-pink-400 -translate-x-1/2 -translate-y-1/2"
-                />
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                >
+                  <div className="w-36 h-36 rounded-full border border-pink-400" />
+                </motion.div>
               )}
             </AnimatePresence>
             <motion.div animate={{ x: approach ? '20vw' : '0vw' }} transition={{ duration: 4, ease: "easeInOut" }} className="absolute left-[10%] top-[55%] sm:top-1/2 -translate-y-1/2 w-20 h-20 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-700 shadow-2xl flex items-center justify-center text-sm sm:text-base">Shivam</motion.div>
