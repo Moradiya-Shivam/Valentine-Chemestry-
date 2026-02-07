@@ -1,15 +1,12 @@
-import "./globals.css";
+
+import './globals.css';
 
 export const metadata = {
-  title: "Our Chemistry ❤️",
-  description: "A reaction crafted with love by Shivam"
+  title: 'Valentine Chemistry',
+  description: 'Crafted with love',
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>{children}</body>
